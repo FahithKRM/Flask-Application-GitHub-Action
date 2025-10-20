@@ -1,0 +1,16 @@
+name: Flask Deployment # workflow name
+on:  # event tigger workflow
+  push:
+    branches: [ main ] # different branch mention the branch name
+
+jobs:
+  Deploy: # job ID -> any name
+    name: Deploy to EC2 # name of the step
+    runs-on: ubuntu-latest # os type
+
+    steps: # list the steps
+      - name: Deploy in EC2 # step name
+        env: 
+          PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          HOST_NAME: ${{ secrets.HOST_NAME }}
+          USER_NAME: ${{ secrets.USER_NAME }}
