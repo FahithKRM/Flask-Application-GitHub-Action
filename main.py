@@ -4,6 +4,6 @@ app = Flask(__name__)
 
 @app.route('/home')
 def home():
-    return "App"
+    return "Welcome to Deploy Application"
 
 # app.run(port=5178, debug=True)
